@@ -3876,7 +3876,10 @@ ORDER BY vass_users.user_id ");
         $buffer ['status_text'] = "Authentication required.";
     }
     print json_encode($buffer);
-} elseif ($type == "downloadalbum") {
+} /* album download 
+ * @Author:Sibani Mishra
+ * @date: 21stAugust  
+*/elseif ($type == "downloadalbum") {
 
 
     $user_id = intval($_REQUEST['user_id']);
@@ -3911,9 +3914,13 @@ ORDER BY vass_users.user_id ");
         $buffer ['status_text'] = "Authentication required.";
     }
     print json_encode($buffer);
-} elseif ($type == "forgetpassword") {
+} /* for forgotpassword
+ * @Author:Sibani Mishra
+ * @date: 18stAugust  
+*/elseif ($type == "forgetpassword") {
 
-    $mailer = new Mandrill("lSqqGC9W5IZbmrOzyY60cA");
+//    $mailer = new Mandrill("lSqqGC9W5IZbmrOzyY60cA"); //akash
+    $mailer = new Mandrill("vGlh3WAlVEtKcQVMz5Fjig");
     $email = $db->safesql($_REQUEST['email']);
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
@@ -3981,7 +3988,9 @@ ORDER BY vass_users.user_id ");
         $async = false;
         $result = $mailer->messages->sendTemplate($template_name, null, $message, $async);
 
-
+//        echo "<pre>";
+//        print_r($result);
+//        die;
         if ($result[0]["status"] == "sent") {
             $responseObj->status_code = 200;
             $responseObj->data = $digits10;
@@ -3996,7 +4005,10 @@ ORDER BY vass_users.user_id ");
         $responseObj->data = "email id not exist";
         echo json_encode($responseObj);
     }
-} elseif ($type == "verifyotp") {
+} /* for otp verification 
+ * @Author:Sibani Mishra
+ * @date: 18stAugust  
+*/elseif ($type == "verifyotp") {
 
     $responseObj = new stdClass();
     $email = $db->safesql($_REQUEST['email']);
@@ -4020,7 +4032,11 @@ ORDER BY vass_users.user_id ");
         $responseObj->data = 'otp is invalid';
     }
     echo json_encode($responseObj);
-} elseif ($type == "changepassword") {
+} 
+/* for change password 
+ * @Author:Sibani Mishra
+ * @date: 18stAugust  
+*/elseif ($type == "changepassword") {
     $responseObj = new stdClass();
     $email = filter_var($db->safesql($_REQUEST['email']), FILTER_SANITIZE_EMAIL);
     $optCode = $db->safesql($_REQUEST['finaloptcode']);
@@ -4037,7 +4053,10 @@ ORDER BY vass_users.user_id ");
         $responseObj->data = 'Unable to change password';
     }
     echo json_encode($responseObj);
-} else if ($type == "featuredalbum") {
+}/* To get  all albumlist of an artist 
+ * @Author:Sibani Mishra
+ * @date: 21stAugust  
+*/else if ($type == "featuredalbum") {
     $responseObj = new stdClass();
     $today = date("Y-m-d");
     $row = array();
@@ -4084,14 +4103,21 @@ ORDER BY vass_users.user_id ");
     header('Content-type: application/json');
 
     print json_encode($buffer);
-} else if ($type == "artist_list") {
+}/* To get  limited sorted Artist list
+ * @Author:Sibani Mishra
+ * @date: 31stAugust 
+*/else if ($type == "artist_list") {
     $user_id = intval($_REQUEST['user_id']);
 
     $token = $db->safesql($_REQUEST['access_token']);
     $row = $db->super_query("SELECT token FROM vass_session WHERE user_id = '" . $user_id . "'");
-    $row1 = $db->super_query("SELECT * FROM vass_artist ORDER BY name");
+
     if ($token == $row['token'] && (!empty($token)) && (!empty($user_id))) {
         $page = intval($_REQUEST['page']);
+    }
+    if (!empty($user_id)) {
+        $total_results = $db->super_query("SELECT COUNT(*) AS count FROM vass_artists");
+        $total_results = $total_results['count'];
     }
 
     $limit = 20;
@@ -4108,18 +4134,76 @@ ORDER BY vass_users.user_id ");
     } else {
         $page = 0;
     }
+    if (!empty($user_id)) {
+        $artists = $db->query("SELECT id,name FROM vass_artists ORDER BY name LIMIT $limit OFFSET $page ");
+    }
+
+
     while ($row = $db->get_row($artists)) {
 
         $num_songs = $db->super_query("SELECT COUNT(*) AS count FROM vass_songs WHERE artist_id = '" . $row['id'] . "'");
 
         $row['total_songs'] = $num_songs['count'];
 
-        $buffer[] = $row;
+        $abc[] = $row;
     }
-    if (!$buffer) {
-        $buffer = array();
+    if (isset($abc)) {
+       // $buffer = array();
 
-        $buffer = array("status_code" => 200, "status_text" => "OK", "results" => 20, "artists" => $buffer, "total" => $total_results, "next" => $next, "previous" => $previous);
+        $buffer = array("status_code" => 200, "status_text" => "OK", "results" => 20, "artists" => $abc, "total" => $total_results, "next" => $next, "previous" => $previous);
+    } else {
+        header("HTTP/1.0 401 UNAUTHORIZED");
+
+        $buffer ['status_code'] = 401;
+
+        $buffer ['status_text'] = "Authentication required.";
+    }
+    header('Cache-Control: no-cache, must-revalidate');
+
+    header('Content-type: application/json');
+
+    print json_encode($buffer);
+}
+
+
+/* To get all sorted Artist list
+ * @Author:Sibani Mishra
+ * @date: 31stAugust
+ */ else if ($type == "artist_list1") {
+    $user_id = intval($_REQUEST['user_id']);
+
+    $token = $db->safesql($_REQUEST['access_token']);
+    $row = $db->super_query("SELECT token FROM vass_session WHERE user_id = '" . $user_id . "'");
+   
+
+    if ($token == $row['token'] && (!empty($token)) && (!empty($user_id))) {
+        $page = intval($_REQUEST['page']);
+    }
+    if (!empty($user_id)) {
+        $total_results = $db->super_query("SELECT COUNT(*) AS count FROM vass_artists");
+        
+        $total_results = $total_results['count'];
+       
+    }
+
+    if (!empty($user_id)) {
+        $artist = $db->query("SELECT id,name FROM vass_artists ORDER BY name");
+        
+    }
+
+
+    while ($row = $db->get_row($artist)) {
+
+        $num_songs = $db->super_query("SELECT COUNT(*) AS count FROM vass_songs WHERE artist_id = '" . $row['id'] . "'");
+        
+        $row['total_songs'] = $num_songs['count'];
+
+        $abc[] = $row;
+    }
+    if (isset($abc)) {
+        //$buffer = array();
+
+        $buffer = array("status_code" => 200, "status_text" => "OK", "artists" => $abc, "total" => $total_results, "next" => $next, "previous" => $previous);
     } else {
         header("HTTP/1.0 401 UNAUTHORIZED");
 
