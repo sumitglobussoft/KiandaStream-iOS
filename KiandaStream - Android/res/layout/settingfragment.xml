@@ -1,0 +1,147 @@
+<com.kiandastream.utils.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/media_player_gb"
+    app:alpha_factor="1.9"
+    app:parallax_factor="1.9" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/userimage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/media_player_gb" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userimage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Full Name"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/name_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/text_fill"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Full Name"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:textColor="@color/black" >
+
+            <requestFocus android:layout_width="wrap_content" />
+        </EditText>
+
+        <TextView
+            android:id="@+id/bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_edittext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Bio"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/bio_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bio"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/text_fill"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Bio"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textColor="@color/black" >
+        </EditText>
+
+        <RelativeLayout
+            android:id="@+id/fb_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bio_edittext"
+            android:layout_marginTop="5dp" >
+
+            <ImageView
+                android:id="@+id/fb_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/facebook_logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fb_btn"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Connect with Facebook to post songs to your wall and find friends"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/fbconnect_status"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fb_connect" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/twt_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fb_rl"
+            android:layout_marginTop="10dp" >
+
+            <ImageView
+                android:id="@+id/twitter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/twitter_logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/twitter_btn"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Connect with Facebook to post songs to your wall and find friends"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/twitter_status"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/twitter_connect" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</com.kiandastream.utils.ParallaxScrollView>

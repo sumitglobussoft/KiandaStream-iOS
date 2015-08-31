@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+     >
+    
+<ImageView 
+    android:layout_height="150dp"
+    android:layout_width="150dp"
+    android:id="@+id/playlistimage"
+    android:src="@drawable/selectimage"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    />
+
+ <EditText
+        android:id="@+id/playlistname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/text_fill"
+       android:layout_below="@+id/playlistimage"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Playlist Name"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="10dp"
+       
+        android:textColor="@color/black" >
+
+        <requestFocus />
+    </EditText>
+    
+ <EditText
+        android:id="@+id/playlistdesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/text_fill"
+        android:layout_below="@+id/playlistname"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Playlist Description"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:layout_marginTop="10dp"
+       
+        android:textColor="@color/black" >
+
+       
+    </EditText>
+
+ <CheckBox
+     android:id="@+id/checkBox1"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/playlistdesc"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="20dp"
+     android:textColor="@color/White"
+     android:text="Public" />
+ 
+ <ImageView
+     android:id="@+id/createplaylist"
+      android:src="@drawable/createplaylist"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:layout_marginLeft="10dp"
+     android:layout_marginRight="10dp"
+     android:layout_centerHorizontal="true"
+     android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

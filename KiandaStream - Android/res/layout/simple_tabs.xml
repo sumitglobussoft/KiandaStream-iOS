@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:background="@color/black"
+    android:layout_height="fill_parent">
+
+   <LinearLayout 
+       android:id="@+id/lin"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:weightSum="4"
+       
+       >
+     <ImageView
+         android:id="@+id/topchart_day" 
+         android:layout_weight="1"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:src="@drawable/day_new"
+         />  
+     <ImageView
+         android:id="@+id/topchart_week" 
+         android:layout_weight="1"
+          android:src="@drawable/week_new"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         />  
+     <ImageView
+         android:id="@+id/topchart_month" 
+         android:layout_weight="1"
+          android:src="@drawable/month_new"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         />  
+         
+     <ImageView
+         android:id="@+id/topchart_year" 
+         android:layout_weight="1"
+          android:src="@drawable/year_new"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         />  
+         
+     <!-- <ImageView
+         android:id="@+id/topchart_all" 
+         android:layout_weight="1"
+          android:src="@drawable/alltime_unactiv"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         /> -->  
+       
+   </LinearLayout>
+<ListView
+    android:layout_below="@+id/lin" 
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/listview"
+    />
+</RelativeLayout>

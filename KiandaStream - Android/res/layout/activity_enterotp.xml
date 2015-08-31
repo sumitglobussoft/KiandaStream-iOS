@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg" >
+
+    <TextView
+        android:id="@+id/checkinboxtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Check your inbox"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold|normal" />
+
+    <TextView
+        android:id="@+id/checkmailotptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinboxtext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Please enter the verification code sent"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/checkotpemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkmailotptext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="to ***********@****.com"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/invalidotptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkotpemail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Invalid verification code."
+        android:textColor="@color/Red"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/otpllayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkotpemail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp" >
+
+        <EditText
+            android:id="@+id/otpedit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/box_input"
+            android:gravity="center"
+            android:maxLength="1" />
+
+        <EditText
+            android:id="@+id/otpedit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/otpedit1"
+            android:background="@drawable/box_input"
+            android:gravity="center"
+            android:maxLength="1" />
+
+        <EditText
+            android:id="@+id/otpedit3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/otpedit2"
+            android:background="@drawable/box_input"
+            android:gravity="center"
+            android:maxLength="1" />
+
+        <EditText
+            android:id="@+id/otpedit4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/otpedit3"
+            android:background="@drawable/box_input"
+            android:gravity="center"
+            android:maxLength="1" />
+
+        <EditText
+            android:id="@+id/otpedit5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/otpedit4"
+            android:background="@drawable/box_input"
+            android:gravity="center"
+            android:maxLength="1" />
+
+        <EditText
+            android:id="@+id/otpedit6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/otpedit5"
+            android:background="@drawable/box_input"
+            android:gravity="center"
+            android:maxLength="1" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/resendotp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/otpllayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Resend Code?"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

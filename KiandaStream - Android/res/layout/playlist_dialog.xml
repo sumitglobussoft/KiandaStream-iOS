@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    
+    android:layout_margin="20dp"
+    android:background="@color/blacklight"
+    android:layout_height="match_parent" >
+    <LinearLayout 
+        android:id="@+id/top_liner"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:weightSum="3">
+        <ImageView 
+             android:id="@+id/close_button"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:src="@drawable/back_tab"
+             android:layout_weight="1"
+             android:layout_alignParentLeft="true"/>
+        <ImageView 
+           android:layout_weight="1"
+           android:id="@+id/saveas_playlist"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:src="@drawable/saved_playlist"
+             android:layout_alignParentLeft="true"/>
+        <ImageView 
+             android:id="@+id/clear_queue"
+             android:layout_weight="1"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:src="@drawable/clear_queue_btn"
+             android:layout_alignParentLeft="true"/>
+    </LinearLayout>
+     
+         <ImageView 
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_centerInParent="true"
+             android:id="@+id/no_songinplaylist"
+             android:src="@drawable/play_icon"
+             android:visibility="invisible"/>
+        <ListView
+            android:layout_below="@+id/top_liner"
+            android:id="@+id/playlist_listview" 
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+
+</RelativeLayout>

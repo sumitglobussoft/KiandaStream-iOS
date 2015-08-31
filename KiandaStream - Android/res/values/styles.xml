@@ -1,0 +1,142 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_color_dark</item>
+        <item name="colorAccent">@color/accent_color</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="Animations" />
+
+	<!-- PopDownMenu -->
+	<style name="Animations.PopDownMenu" />
+	
+	<style name="Animations.PopDownMenu.Center">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_top</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_bottom</item>
+	</style>
+	
+	<style name="Animations.PopDownMenu.Left">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_topleft_to_bottomright</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_bottomright_to_topleft</item>
+	</style>
+	
+	<style name="Animations.PopDownMenu.Right">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_topright_to_bottomleft</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_bottomleft_to_topright</item>
+	</style>
+	
+	<style name="Animations.PopDownMenu.Reflect">
+		<item name="@android:windowEnterAnimation">@anim/pump_top</item>
+		<item name="@android:windowExitAnimation">@anim/disappear</item>
+	</style>
+	
+	<!-- PopUpMenu -->
+	<style name="Animations.PopUpMenu" />
+	
+	<style name="Animations.PopUpMenu.Center">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_bottom</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
+	</style>
+	
+	<style name="Animations.PopUpMenu.Left">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_bottomleft_to_topright</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_topright_to_bottomleft</item>
+	</style>
+	
+	<style name="Animations.PopUpMenu.Right">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>
+	</style>
+	
+	<style name="Animations.PopUpMenu.Reflect">
+		<item name="@android:windowEnterAnimation">@anim/pump_bottom</item>
+		<item name="@android:windowExitAnimation">@anim/disappear</item>
+	</style>
+     <style name="Theme.PageIndicatorDefaults" parent="@style/Theme.AppCompat">
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+    </style>
+
+    <style name="StyledIndicators" parent="@android:style/Theme.Light">
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator123</item>
+        <!--
+        <item name="vpiCirclePageIndicatorStyle">@style/CustomCirclePageIndicator</item>
+        <item name="vpiLinePageIndicatorStyle">@style/CustomLinePageIndicator</item>
+        <item name="vpiTitlePageIndicatorStyle">@style/CustomTitlePageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
+        <item name="vpiUnderlinePageIndicatorStyle">@style/CustomUnderlinePageIndicator</item>
+
+
+
+        -->
+    </style>
+     <style name="CustomTitlePageIndicator">
+        <item name="android:background">#18FF0000</item>
+        <item name="footerColor">#FDFCFC</item>
+        <item name="footerLineHeight">1dp</item>
+        <item name="footerIndicatorHeight">3dp</item>
+        <item name="footerIndicatorStyle">underline</item>
+        <item name="android:textColor">#AA000000</item>
+        <item name="selectedColor">#FF000000</item>
+        <item name="selectedBold">true</item>
+    </style>
+
+    <style name="CustomLinePageIndicator">
+        <item name="strokeWidth">4dp</item>
+        <item name="lineWidth">30dp</item>
+        <item name="unselectedColor">#FF888888</item>
+        <item name="selectedColor">#FDFCFC</item>
+    </style>
+
+    <style name="CustomCirclePageIndicator">
+        <item name="fillColor">#FF888888</item>
+        <item name="strokeColor">#FF000000</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="radius">10dp</item>
+        <item name="centered">true</item>
+    </style>
+    <style name="CustomTabPageIndicator123">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">#FF555555</item>
+    </style>
+
+    <style name="CustomTabPageIndicator.Text" parent="android:TextAppearance.Medium">
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="CustomUnderlinePageIndicator">
+        <item name="selectedColor">#FFCC0000</item>
+        <item name="android:background">#FFCCCCCC</item>
+        <item name="fadeLength">1000</item>
+        <item name="fadeDelay">1000</item>
+    </style>
+    
+    <style name="Widget.kiandastream.HeaderBar.Spinner" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:dropDownSelector">?android:selectableItemBackground</item>
+        <item name="android:divider">@null</item>
+        <item name="android:popupBackground">@color/white</item>
+        <item name="android:overlapAnchor">true</item>
+</style>
+</resources>

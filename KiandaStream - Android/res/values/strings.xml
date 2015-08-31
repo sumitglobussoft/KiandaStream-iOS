@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KiandaStream</string>
+    <string name="app_id">922478037794381</string>
+    <string name="fb_id">869447339769084</string>
+    <string name="app_secret">512cd1b16c0fd41fac83912333d34bc4</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_signin">SigninActivity</string>
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="retypepassword">Re&#45;type Password</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="action_settings">Setting</string>
+    <string name="welcomesignup">welcome signup</string>
+    <string name="welcomeregister">welcome register</string>
+    <string name="register">REGISTER</string>
+    <string name="toolbarspinner_title">spinner</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <plurals name="numberOfNewArticles">
+        <item quantity="one">%d new</item>
+        <item quantity="other">%d new</item>
+    </plurals>
+
+    <string-array name="drawer_titles">
+        <item>Home</item>
+        <item>Trending</item>
+        <item>New Releases</item>
+        <item>Charts</item>
+        <item>Browse</item>
+        <item>Follow</item>
+        <item>Create Playlist</item>
+        <item>Playlist</item>
+        <item>Favorites</item>
+    </string-array>
+
+    <array name="drawer_icons">
+        <item>@drawable/ic_apps</item>
+        <item>@drawable/ic_sales</item>
+        <item>@drawable/ic_blog</item>
+        <item>@drawable/ic_bookmark</item>
+        <item>@drawable/ic_community</item>
+        <item>@drawable/ic_community</item>
+        <item>@drawable/ic_community</item>
+        <item>@drawable/ic_community</item>
+        <item>@drawable/ic_community</item>
+    </array>
+    <array name="browseoptions">
+        <item>Artists</item>
+        <item>Featured Album</item>
+        <item>Genres</item>
+    </array>
+
+     <array name="chartsoptions">
+        <item>Top Album</item>
+        <item>Top Artists</item>
+        <item>Top Tracks</item>
+    </array>
+    
+    <string-array name="footer_titles">
+        <item>Settings</item>
+        <item>Feedback</item>
+    </string-array>
+
+    <array name="footer_icons">
+        <item>@drawable/ic_settings</item>
+        <item>@drawable/ic_help</item>
+    </array>
+
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+</resources>

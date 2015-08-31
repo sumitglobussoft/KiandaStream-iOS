@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/transparent_bg"
+    android:orientation="horizontal" >
+<RelativeLayout 
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_centerInParent="true">
+    <ImageView
+        android:id="@+id/album"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/headphone" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="KindaStream"
+        android:layout_toRightOf="@+id/album" />
+    <TextView
+        android:id="@+id/songname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Gray"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="2dp"
+        android:lines="1"
+        android:text="KindaStream"
+        android:layout_toLeftOf="@+id/backword"
+        android:layout_toRightOf="@+id/album" />
+    
+    <ImageView
+        android:id="@+id/backword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/play"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/backward" />
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerVertical="true"
+       android:layout_toLeftOf="@+id/forward"
+        android:src="@drawable/play"
+        android:layout_marginRight="5dp"
+        android:text="Stop" />
+
+    <ImageView
+        android:id="@+id/forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/close"
+        android:layout_centerVertical="true"
+        android:src="@drawable/forward"
+       android:layout_marginRight="8dp"
+        android:text="Stop" />
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        
+        android:src="@drawable/close"
+        android:text="Stop" />
+
+    
+</RelativeLayout>
+</RelativeLayout>

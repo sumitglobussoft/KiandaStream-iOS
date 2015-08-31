@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MultiSwipeRefreshLayout">
+        <attr name="foreground" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AccountImageView">
+        <attr name="maskDrawable" format="reference" />
+        <attr name="borderDrawable" format="reference" />
+        <attr name="desaturateOnPress" format="boolean" />
+    </declare-styleable>
+	<declare-styleable name="ParallaxScroll">
+        <attr name="parallax_factor" format="float" />
+        <attr name="alpha_factor" format="float" />
+        <attr name="inner_parallax_factor" format="float" />
+        <attr name="parallax_views_num" format="integer" />
+        <attr name="circular_parallax" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ParallaxScrollViewTwo">
+        <attr name="zoomRatio" format="float" />
+    </declare-styleable>
+</resources>

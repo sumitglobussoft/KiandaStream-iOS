@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kiandastream"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	 <uses-permission android:name="android.permission.WAKE_LOCK" />
+	 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SigninActivity"
+            android:label="@string/app_name" >
+           
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" >
+            
+        </activity>
+         <activity
+            android:name=".EnterOTPActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".ResetPassword"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/fb_id" />
+
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up" >
+        </activity>
+
+        <service
+            android:name="com.paypal.android.sdk.payments.PayPalService"
+            android:exported="false" />
+
+        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity" />
+        <activity
+            android:name="io.card.payment.CardIOActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="io.card.payment.DataEntryActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> 
+        </activity>
+        
+        <service 
+             android:enabled="true"
+            android:exported="true" android:name="com.kiandastream.musicplayer.MusicService">
+            <intent-filter>
+                <action android:name="com.kiandastream.mediaplayer.action.TOGGLE_PLAYBACK" />
+                <action android:name="com.kiandastream.mediaplayer.action.PLAY" />
+                 <action android:name="com.kiandastream.mediaplayer.action.RESUME" />
+                 <action android:name="com.kiandastream.mediaplayer.action.NEXT" />
+                <action android:name="com.kiandastream.mediaplayer.action.PAUSE" />
+                <action android:name="com.kiandastream.mediaplayer.action.SKIP" />
+                <action android:name="com.kiandastream.mediaplayer.action.REWIND" />
+                <action android:name="com.kiandastream.mediaplayer.action.STOP" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.kiandastream.mediaplayer.action.URL" />
+                <data android:scheme="http" />
+            </intent-filter>
+        </service>
+		  <receiver android:name="com.kiandastream.musicplayer.MusicIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+        
+        
+    </application>
+
+</manifest>

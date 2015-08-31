@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   <ImageView
+    android:id="@+id/userimage" 
+    android:layout_height="160dp"
+    android:src="@drawable/splash_screen"
+    android:layout_width="match_parent"/>
+<LinearLayout 
+       android:id="@+id/lin"
+       android:layout_below="@+id/userimage"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:background="@color/blacklight"
+       android:weightSum="4"
+       
+       >
+     <ImageView
+         android:id="@+id/artistinfo_topsong" 
+         android:layout_weight="1"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:src="@drawable/top_tracks_active"
+         />
+
+     <ImageView
+         android:id="@+id/artistinfo_album"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:src="@drawable/albums_menu" />
+  
+     <ImageView
+         android:id="@+id/artistinfo_bio" 
+         android:layout_weight="1"
+          android:src="@drawable/biography_menu"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         />  
+     <ImageView
+         android:id="@+id/artistinfo_similar" 
+         android:layout_weight="1"
+          android:src="@drawable/relate_menu"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         />      
+       
+   </LinearLayout> 
+
+</RelativeLayout>

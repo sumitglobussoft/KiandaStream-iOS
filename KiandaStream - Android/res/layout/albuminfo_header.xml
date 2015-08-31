@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+     >
+    
+<ImageView
+    android:id="@+id/userimage" 
+    android:layout_height="180dp"
+    android:layout_width="match_parent"
+     android:src="@drawable/usericon"/>
+   
+   
+<LinearLayout 
+    android:layout_below="@+id/userimage"
+    android:id="@+id/linearlayout"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_width="match_parent">
+    
+  <TextView 
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:id="@+id/ablum_name"
+      android:textStyle="bold"
+      android:textSize="18sp"
+      android:layout_marginLeft="10dp"
+      android:textColor="@color/white"
+      android:text="album naem"
+      /> 
+ <RelativeLayout 
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent">
+          
+    <TextView 
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:id="@+id/ablum_artistname"
+      android:textColor="@color/white"
+      android:layout_marginLeft="10dp"
+      android:text="album naem"
+      />  
+      
+      <ImageView
+          android:id="@+id/playall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/play_icon"
+     />  
+      </RelativeLayout>
+   
+    <TextView 
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:id="@+id/ablum_songcount"
+      android:textColor="@color/white"
+      android:layout_marginLeft="10dp"
+      android:text="album naem"
+      />       
+</LinearLayout>
+
+
+
+</RelativeLayout>
