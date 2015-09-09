@@ -4100,7 +4100,7 @@ ORDER BY vass_users.user_id ");
     header('Content-type: application/json');
 
     print json_encode($buffer);
-}/* To get  limited sorted Artist list
+}/* To get sorted Artist list with in a  single page
  * @Author:Sibani Mishra
  * @date: 31stAugust 
  */ else if ($type == "artist_list") {
