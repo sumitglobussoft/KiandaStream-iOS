@@ -425,8 +425,7 @@ if ($type == "createAccount") {
 
     $username = $db->safesql($_REQUEST['username']);
     $password = $db->safesql(md5($_REQUEST['password']));
-//    echo $password;
-//    die("abc");
+
     $row = $db->super_query("SELECT * FROM vass_users WHERE username = '" . $username . "' AND password = '" . $password . "'");
 
     if (!$row['user_id']) {
@@ -662,7 +661,7 @@ if ($type == "createAccount") {
 
         $buffer ['status_text'] = "OK";
         $buffer ['status_code'] = "200";
-//added by Ben
+        //added by Ben
         $buffer ['song_id'] = $row ['song_id'];
     }
 } elseif ($type == "getUpdateSong") {
@@ -687,7 +686,7 @@ if ($type == "createAccount") {
 
         $db->query("UPDATE vass_songs SET contest_id='$contest_id', tags = '$song_genre', location = '$song_location', title = '$title' WHERE id = '$song_id'");
 
-//Added because contest guy send suck thing
+        //Added because contest guy send suck thing
         $no_change = substr($file_cover_image, 0, 4);
 
 
@@ -797,7 +796,7 @@ HTML;
 //        $page = intval($_REQUEST['page']);
 //        echo gettype($page);die;
 //        if (!empty($page) && $page != 0) {
-// the-day
+        // the-day
 
         $D_SORT = 1;
 
@@ -1911,9 +1910,9 @@ HTML;
 
     print json_encode($result);
 
-//} else {
-//	echo $trending_json;
-//}
+    //} else {
+    //	echo $trending_json;
+    //}
 } elseif ($type == "search") {
 
     $user_id = intval($_REQUEST['user_id']);
@@ -3050,7 +3049,7 @@ ORDER BY vass_users.user_id ");
             $response->songstotal = $i;
 //             $result['songs'] = (array)$songlist;         
 //            $result ['songs']['total'] = $i;
-//artistbio
+            //artistbio
             $db->query("SELECT bio FROM vass_artists WHERE id = '$id'");
 
             while ($row = $db->get_row()) {
@@ -3059,7 +3058,7 @@ ORDER BY vass_users.user_id ");
             }
             $response->bio = $bio;
 
-// artistsimilar
+            // artistsimilar
 
             $db->query("SELECT tag FROM vass_artists WHERE id = '$id'");
 
@@ -3095,7 +3094,7 @@ ORDER BY vass_users.user_id ");
             $response->similar_artisttotal = $total_results;
 
 
-//artistallalbum
+            //artistallalbum
 
             $db->query("SELECT vass_albums.artist_id, vass_artists.name AS artist, vass_albums.id, vass_albums.id, vass_albums.view, vass_albums.name 
 	FROM vass_albums LEFT JOIN vass_artists ON vass_albums.artist_id = vass_artists.id WHERE vass_artists.id = '$id'");
@@ -3131,7 +3130,7 @@ ORDER BY vass_users.user_id ");
     header('Cache-Control: no-cache, must-revalidate');
 
     header('Content-type: application/json');
-// header('Content-type: application/text');
+    // header('Content-type: application/text');
 //print_r($buffer);
 
 
@@ -3489,14 +3488,12 @@ ORDER BY vass_users.user_id ");
         if (!empty($letter)) {
 
 
-            // $artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '$letter%' LIMIT $limit OFFSET $page ");
-            // echo query("SELECT id, name FROM vass_artists WHERE name LIKE '$letter%' LIMIT $limit OFFSET $page ");die;
-            $artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '$letter%' LIMIT $limit OFFSET $page  order by name");
+            $artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '$letter%' LIMIT $limit OFFSET $page ");
+            // $artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '$letter%' LIMIT $limit OFFSET $page  order by name");
         } else if (!empty($string)) {
 
-            //$artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '%$string%' LIMIT $limit OFFSET $page ");
-            $artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '%$string%' LIMIT $limit OFFSET $page order by name ");
-            //print_r($artists);die;
+            $artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '%$string%' LIMIT $limit OFFSET $page ");
+            // $artists = $db->query("SELECT id, name FROM vass_artists WHERE name LIKE '%$string%' LIMIT $limit OFFSET $page order by name ");
         } else {
 
             $artists = $db->query("SELECT id, name FROM vass_artists LIMIT $limit OFFSET $page");
@@ -3530,7 +3527,7 @@ ORDER BY vass_users.user_id ");
     print json_encode($buffer);
 } elseif ($type == "suggess") {
 
-//{"status_text": "OK", "status_code": 200, "suggess": [{"title":"A Men", "url":"artist\/a-men\/1"},{"title":"A Zflow", "url":"artist\/a-zflow\/2"},{"title":"Bari Niich", "url":"album\/bari-niich\/2"},{"title":"Dir Lkhir Talqa Lkhir", "url":"album\/dir-lkhir-talqa-lkhir\/3"},{"title":"Bari niich", "url":"song\/bari-niich\/2"},{"title":"Dir Lkhir Talqa Lkhir", "url":"song\/dir-lkhir-talqa-lkhir\/3"}]}
+    //{"status_text": "OK", "status_code": 200, "suggess": [{"title":"A Men", "url":"artist\/a-men\/1"},{"title":"A Zflow", "url":"artist\/a-zflow\/2"},{"title":"Bari Niich", "url":"album\/bari-niich\/2"},{"title":"Dir Lkhir Talqa Lkhir", "url":"album\/dir-lkhir-talqa-lkhir\/3"},{"title":"Bari niich", "url":"song\/bari-niich\/2"},{"title":"Dir Lkhir Talqa Lkhir", "url":"song\/dir-lkhir-talqa-lkhir\/3"}]}
 
     $query = $db->safesql($_REQUEST['query']);
 
@@ -3879,7 +3876,7 @@ ORDER BY vass_users.user_id ");
 } /* album download 
  * @Author:Sibani Mishra
  * @date: 21stAugust  
-*/elseif ($type == "downloadalbum") {
+ */ elseif ($type == "downloadalbum") {
 
 
     $user_id = intval($_REQUEST['user_id']);
@@ -3917,7 +3914,7 @@ ORDER BY vass_users.user_id ");
 } /* for forgotpassword
  * @Author:Sibani Mishra
  * @date: 18stAugust  
-*/elseif ($type == "forgetpassword") {
+ */ elseif ($type == "forgetpassword") {
 
 //    $mailer = new Mandrill("lSqqGC9W5IZbmrOzyY60cA"); //akash
     $mailer = new Mandrill("vGlh3WAlVEtKcQVMz5Fjig");
@@ -4008,7 +4005,7 @@ ORDER BY vass_users.user_id ");
 } /* for otp verification 
  * @Author:Sibani Mishra
  * @date: 18stAugust  
-*/elseif ($type == "verifyotp") {
+ */ elseif ($type == "verifyotp") {
 
     $responseObj = new stdClass();
     $email = $db->safesql($_REQUEST['email']);
@@ -4032,11 +4029,11 @@ ORDER BY vass_users.user_id ");
         $responseObj->data = 'otp is invalid';
     }
     echo json_encode($responseObj);
-} 
+}
 /* for change password 
  * @Author:Sibani Mishra
  * @date: 18stAugust  
-*/elseif ($type == "changepassword") {
+ */ elseif ($type == "changepassword") {
     $responseObj = new stdClass();
     $email = filter_var($db->safesql($_REQUEST['email']), FILTER_SANITIZE_EMAIL);
     $optCode = $db->safesql($_REQUEST['finaloptcode']);
@@ -4056,7 +4053,7 @@ ORDER BY vass_users.user_id ");
 }/* To get  all albumlist of an artist 
  * @Author:Sibani Mishra
  * @date: 21stAugust  
-*/else if ($type == "featuredalbum") {
+ */ else if ($type == "featuredalbum") {
     $responseObj = new stdClass();
     $today = date("Y-m-d");
     $row = array();
@@ -4069,12 +4066,12 @@ ORDER BY vass_users.user_id ");
             break;
     }while (count($row) > 0);
 
-    $album = $db->super_query("SELECT vass_albums.name AS album_title, vass_albums.descr, vass_albums.date, vass_artists.name AS artist_name, vass_albums.id AS album_id FROM vass_albums LEFT JOIN vass_artists ON vass_albums.artist_id = vass_artists.id WHERE vass_albums.id='" . $row["album_id"] . "'");
+    $album = $db->super_query("SELECT vass_albums.name AS album_title, vass_albums.descr, vass_albums.date, vass_artists.name AS artist_name,vass_artists.id AS artist_id,vass_albums.id AS album_id FROM vass_albums LEFT JOIN vass_artists ON vass_albums.artist_id = vass_artists.id WHERE vass_albums.id='" . $row["album_id"] . "'");
 
-    $sql_result = $db->query("SELECT vass_songs.id AS song_id, vass_songs.title AS song_title, vass_songs.loved, vass_artists.name AS song_artist, vass_albums.name AS song_album, vass_albums.id AS album_id FROM vass_songs LEFT JOIN vass_albums ON vass_songs.album_id = vass_albums.id LEFT JOIN vass_artists ON vass_songs.artist_id = vass_artists.id WHERE vass_albums.id = '" . $row["album_id"] . "'");
+    $sql_result = $db->query("SELECT vass_songs.id AS song_id, vass_songs.title AS song_title, vass_songs.loved, vass_artists.name AS song_artist,vass_artists.id AS artist_id,vass_albums.name AS song_album, vass_albums.id AS album_id FROM vass_songs LEFT JOIN vass_albums ON vass_songs.album_id = vass_albums.id LEFT JOIN vass_artists ON vass_songs.artist_id = vass_artists.id WHERE vass_albums.id = '" . $row["album_id"] . "'");
 
     while ($row = $db->get_row($sql_result)) {
-
+        $song_list ['artist_id'] = $row ['artist_id'];
         $song_list ['album'] = $row ['song_album'];
         $song_list ['similar_artists'] = similar_artists($row ['song_id']);
         $song_list ['buy_link'] = null;
@@ -4106,7 +4103,7 @@ ORDER BY vass_users.user_id ");
 }/* To get  limited sorted Artist list
  * @Author:Sibani Mishra
  * @date: 31stAugust 
-*/else if ($type == "artist_list") {
+ */ else if ($type == "artist_list") {
     $user_id = intval($_REQUEST['user_id']);
 
     $token = $db->safesql($_REQUEST['access_token']);
@@ -4135,11 +4132,11 @@ ORDER BY vass_users.user_id ");
         $page = 0;
     }
     if (!empty($user_id)) {
-        $artists = $db->query("SELECT id,name FROM vass_artists ORDER BY name LIMIT $limit OFFSET $page ");
+        $artist = $db->query("SELECT id,name FROM vass_artists ORDER BY name LIMIT $limit OFFSET $page ");
     }
 
 
-    while ($row = $db->get_row($artists)) {
+    while ($row = $db->get_row($artist)) {
 
         $num_songs = $db->super_query("SELECT COUNT(*) AS count FROM vass_songs WHERE artist_id = '" . $row['id'] . "'");
 
@@ -4148,9 +4145,9 @@ ORDER BY vass_users.user_id ");
         $abc[] = $row;
     }
     if (isset($abc)) {
-       // $buffer = array();
+        $buffer = array();
 
-        $buffer = array("status_code" => 200, "status_text" => "OK", "results" => 20, "artists" => $abc, "total" => $total_results, "next" => $next, "previous" => $previous);
+        $buffer = array("status_code" => 200, "status_text" => "OK", "artists" => $abc, "total" => $total_results, "next" => $next, "previous" => $previous);
     } else {
         header("HTTP/1.0 401 UNAUTHORIZED");
 
@@ -4169,39 +4166,37 @@ ORDER BY vass_users.user_id ");
 /* To get all sorted Artist list
  * @Author:Sibani Mishra
  * @date: 31stAugust
- */ else if ($type == "artist_list1") {
+ */ else if ($type == "browseartists") {
     $user_id = intval($_REQUEST['user_id']);
 
     $token = $db->safesql($_REQUEST['access_token']);
     $row = $db->super_query("SELECT token FROM vass_session WHERE user_id = '" . $user_id . "'");
-   
+
 
     if ($token == $row['token'] && (!empty($token)) && (!empty($user_id))) {
-        $page = intval($_REQUEST['page']);
+
     }
     if (!empty($user_id)) {
         $total_results = $db->super_query("SELECT COUNT(*) AS count FROM vass_artists");
-        
+
         $total_results = $total_results['count'];
-       
     }
 
     if (!empty($user_id)) {
         $artist = $db->query("SELECT id,name FROM vass_artists ORDER BY name");
-        
     }
 
 
     while ($row = $db->get_row($artist)) {
 
         $num_songs = $db->super_query("SELECT COUNT(*) AS count FROM vass_songs WHERE artist_id = '" . $row['id'] . "'");
-        
+
         $row['total_songs'] = $num_songs['count'];
 
         $abc[] = $row;
     }
     if (isset($abc)) {
-        //$buffer = array();
+        $buffer = array();
 
         $buffer = array("status_code" => 200, "status_text" => "OK", "artists" => $abc, "total" => $total_results, "next" => $next, "previous" => $previous);
     } else {
@@ -4217,4 +4212,5 @@ ORDER BY vass_users.user_id ");
 
     print json_encode($buffer);
 }
+
 ?>
